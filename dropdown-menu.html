@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Advanced Selectors | Dropdown Menu</title>
+    <style>
+        body{
+            background-color: #333;
+        }
+        nav label{
+            cursor: pointer;
+            user-select: none;
+            background-color: #cdcdb1;
+            width: 150px;
+            height: 40px; 
+            display: inline-block;
+            line-height: 45px;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid rgb(148, 146, 142);
+            border-radius: 3%;
+            color: #223
+        }
+        nav label::after{
+            content: "▼";
+            margin-left:40px;
+            color: #332;
+        }
+        nav ul{
+            display: none;
+            list-style: none;
+            padding-left: 0px;
+            margin-top: 0;
+            margin-left: 3px;
+        }
+        nav input{
+            display:none;
+        }
+        nav input:checked+label+ul{
+            display: block;
+
+        }
+        nav input:checked+label::after{
+            content: "▲ ";
+        }
+        .celula-1{
+            width: 139px;
+            height: 40px; 
+            background-color: #f5f5ef;
+            padding-left: 25px;
+            line-height: 40px;
+
+
+        }
+        .celula-2{
+            width: 139px;
+            height: 35px;
+            background-color: #cdcdb1;
+            padding-left: 25px;
+            line-height: 35px;
+            
+            
+        }
+        .celula-3{
+            width: 139px;
+            height: 50px;
+            background-color: #e1e1d0;
+            padding-left: 25px;
+            line-height: 50px;
+        }
+        a{
+            text-decoration: none;
+            color:#223;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="toggler" />
+        <label for="toggler">
+            Dropdown
+        </label>
+        <ul>
+            <li class="celula-1" ><a href="">Item 1</a></li>
+            <li class="celula-2" ><a href="">Item 2</a></li>
+            <li class="celula-3" ><a href="">Item 3</a></li>
+        </ul>    
+    </nav>
+</body>
+</html>
